@@ -1,0 +1,61 @@
+import os
+from dataclasses import dataclass
+from pathlib import Path
+
+TEMPLATE_PATH = Path("").absolute().parent / "assets"
+DB_PATH = Path("").absolute().parent / "db"
+DB_PATH.mkdir(parents=True, exist_ok=True)
+print(TEMPLATE_PATH)
+
+
+@dataclass
+class Configer:
+    server_host = "localhost"
+    server_port = 8001
+
+    # ollama llm model name
+    model_name = "llama3:8b-instruct-q4_0"
+    # note: Large models can be used remotely
+    # model_name = "llama3:70b-instruct"
+
+    # multi model llm model
+    mm_model_name = "llava-llama3"
+
+    # ollama llm model host:port
+    ollama_url = "http://localhost:11434"
+
+    # mm_server host:port
+    mm_server_url = "http://localhost:50110"
+
+    # text embedding model
+    embedding_model_name = "BAAI/bge-small-en-v1.5"
+
+    store_host = "http://localhost:8001/medias"
+    # pseudo data path
+    json_file_path = str(TEMPLATE_PATH / "mm_pseudo_data.json")
+    local_store_path = str(TEMPLATE_PATH / "medias")
+
+    similarities_thre = 0.6
+
+    # embedding storage path
+    db_path = str(DB_PATH)
+    db_index_id = "v1"
+    docs_persist_path = str(DB_PATH / "docstore.json")
+
+    # image embedding model
+    clip_model_name = "ViT-B/32"
+
+    # ocr model server
+    ocr_model_name = "ocr"
+    ocr_reader_base_url = mm_server_url
+
+    # use video service
+    use_video_service = False
+    video_model_name = "faster_whisper"
+    video_reader_base_url = mm_server_url
+
+    # use google search
+    use_google_search = False
+
+
+Config = Configer()

@@ -1,0 +1,36 @@
+import os
+from dataclasses import dataclass
+from pathlib import Path
+
+from pydantic import BaseModel
+
+TEMPLATE_PATH = Path("").absolute()
+
+
+@dataclass
+class Configer:
+    # mm server host
+    server_host = "localhost"
+    server_port = 50110
+
+    # image encoder model name
+    clip_model_name = "ViT-B/32"
+    # model keep alive time (s)
+    clip_keep_alive = 60
+
+    # ocr model path
+    ocr_model_path = str(TEMPLATE_PATH / "services/ocr_server/ocr_models")
+    # model keep alive time (s)
+    ocr_keep_alive = 60
+
+    # text embedding model name
+    hf_embedding_model_name = "BAAI/bge-small-en-v1.5"
+    # model keep alive time (s)
+    hf_keep_alive = 60
+
+    # video transcription  model name
+    audio_model_name = "small"
+    # model keep alive time (s)
+    video_keep_alive = 1  # 立即释放
+
+Config = Configer()
