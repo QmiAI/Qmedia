@@ -122,7 +122,6 @@ QMedia 目前正在积极开发中，有任何需求或者问题，欢迎提交 
   <!-- - 图片排版, 人物识别: [HQ-SAM](https://github.com/FlagOpen/HQ-SAM) 高质量分割一切 -->
   - 视觉理解大模型:
 
-    - [ ] [MiniCPM](https://github.com/OpenBMB/MiniCPM-V) (选配): 本地私有部署 GPT-4V Level Multimodal LLM, 可端上设备使用
     - [ ] [llava-llama3](https://ollama.com/library/llava-llama3): ollama 本地部署 GPT-4V Level 视觉理解模型
 
   **视频类模型**:
