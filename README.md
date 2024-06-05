@@ -30,7 +30,7 @@ AI content search engine designed specifically for content creators. <br />
 - Local deployment, enabling offline content search and Q&A for private data.
 
 <details open="open">
-<summary>目录树</summary>
+<summary>Directory</summary>
 
 - [👋🏻 Introduction](#-introduction)
 - [💫 feature overview](#-feature-overview)
