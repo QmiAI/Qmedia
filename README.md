@@ -58,7 +58,7 @@ AI content search engine designed specifically for content creators. <br />
 [![][share-x-shield]][share-x-link]
 
 **Spark new ideas for content creation**
-| <div align="center"> <a href="https://discord.gg/rQq4QX3v"><img src="https://img.shields.io/discord/1245752894389489704?style=social&logo=discord"></a> </div>| Join our Discord community！ |
+| <div align="center"> <a href="https://discord.gg/MtMeTeGy"><img src="https://img.shields.io/discord/1245752894389489704?style=social&logo=discord"></a> </div>| Join our Discord community！ |
 | :---------------------------------------- | :------------------------ |
 | ![alt text](docs/images/image-1.png) | **Join our WeChat group !** |
 

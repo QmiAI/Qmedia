@@ -15,7 +15,7 @@
 
 [更新日志](./CHANGELOG.md) - [报告问题][g-issues-link] - [请求功能][g-issues-link]
 
-[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Lafe)][lafe-twitter] <a href="https://x.com/LinkLin1987"><img src="https://img.shields.io/badge/Follow-%40LinkLin-1DA1F2?logo=twitter&style={style}"></a> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE) <a href="https://discord.gg/rQq4QX3v"><img src="https://img.shields.io/discord/1245752894389489704?style=social&logo=discord"></a>
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Lafe)][lafe-twitter] <a href="https://x.com/LinkLin1987"><img src="https://img.shields.io/badge/Follow-%40LinkLin-1DA1F2?logo=twitter&style={style}"></a> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE) <a href="https://discord.gg/MtMeTeGy"><img src="https://img.shields.io/discord/1245752894389489704?style=social&logo=discord"></a>
 
 </div>
 
@@ -58,7 +58,7 @@ QMedia 目前正在积极开发中，有任何需求或者问题，欢迎提交 
 [![][share-x-shield]][share-x-link]
 
 **碰撞内容创作新思路**
-| <div align="center"> <a href="https://discord.gg/rQq4QX3v"><img src="https://img.shields.io/discord/1245752894389489704?style=social&logo=discord"></a> </div>| 加入我们的 Discord 社区！ |
+| <div align="center"> <a href="https://discord.gg/MtMeTeGy"><img src="https://img.shields.io/discord/1245752894389489704?style=social&logo=discord"></a> </div>| 加入我们的 Discord 社区！ |
 | :---------------------------------------- | :------------------------ |
 | ![alt text](docs/images/image-1.png) | **加入我们的 wechat 群聊 !** |
 
