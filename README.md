@@ -15,7 +15,7 @@ AI content search engine designed specifically for content creators. <br />
 
 [Changelog](./CHANGELOG.md) - [Report Issues][g-issues-link] - [Request Feature][g-issues-link]
 
-[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Lafe)][lafe-twitter] <a href="https://x.com/LinkLin1987"><img src="https://img.shields.io/badge/Follow-%40LinkLin-1DA1F2?logo=twitter&style={style}"></a> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE) <a href="https://discord.gg/rQq4QX3v"><img src="https://img.shields.io/discord/1245752894389489704?style=social&logo=discord"></a>
+[![Twitter](https://img.shields.io/twitter/url/https/twitter.com/cloudposse.svg?style=social&label=Follow%20%40Lafe)][lafe-twitter] <a href="https://x.com/LinkLin1987"><img src="https://img.shields.io/badge/Follow-%40LinkLin-1DA1F2?logo=twitter&style={style}"></a> [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE) <a href="https://discord.gg/MtMeTeGy"><img src="https://img.shields.io/discord/1245752894389489704?style=social&logo=discord"></a>
 
 </div>
 
