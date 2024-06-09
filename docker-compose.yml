@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+  qmedia-web:
+    build:
+      dockerfile: ./qmedia_web/Dockerfile
+    restart: always
+    container_name: qmedia_web #容器名稱
+    environment:
+      - SERVICE_ENDPOINT=http://qmedia_mmarg_server:50111
+    depends_on:
+      - qmedia-mmrag  
+    ports:
+      - 50112:50112
+  qmedia-mmrag:
+    build:
+      dockerfile: ./mmrag_server/Dockerfile
+    restart: always
+    container_name: qmedia_mmarg_server #容器名稱
+    depends_on:
+      - qmedia-mmsever
+    volumes:
+      - ./assets:/assets 
+    ports:
+      - 50111:50111   
+  qmedia-mmsever:
+    build:
+      dockerfile: ./mm_server/Dockerfile
+    restart: always
+    container_name: qmedia_mm_server #容器名稱
+    ports:
+      - 50110:50110       
