@@ -1,0 +1,15 @@
+# os stuff
+.DS_Store
+
+
+# npm
+node_modules
+
+# secrets
+.env
+qmedia_web
+mm_server/config.py
+mmrag_server/config.py
+assets
+# vscode
+.vscode
