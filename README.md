@@ -317,6 +317,10 @@ Thanks to [QAnything](https://github.com/netease-youdao/QAnything/) for strong O
 
 Thanks to [llava-llama3](https://github.com/netease-youdao/QAnything/) for strong llm vision models.
 
+Thanks to [Ghibli Image Generator](https://ghibliimagegenerator.com/) for api support.
+
+ 
+
 [lafe-twitter]: https://x.com/Lafe8088
 [g-issues-link]: https://github.com/QmiAI/Qmedia/issues
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
