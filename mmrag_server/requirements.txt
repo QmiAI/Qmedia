@@ -6,6 +6,7 @@ pydantic
 rich
 uvicorn
 yagooglesearch
+tavily-python
 
 llama-index-postprocessor-cohere_rerank
 llama-index-llms-ollama 

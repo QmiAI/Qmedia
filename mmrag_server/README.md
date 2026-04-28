@@ -31,6 +31,7 @@ Modify the `config.py` configuration file according to your usage:
 
 - use_video_service: Whether to use the video service, default is off
 - use_google_search: Whether to use the Google search service
+- use_tavily_search: Whether to use the Tavily search service (requires `TAVILY_API_KEY` environment variable)
 
 ```python
 @dataclass
@@ -81,7 +82,13 @@ class Configer:
 
     # use google search
     use_google_search = False
+
+    # use tavily search (set to True and provide TAVILY_API_KEY env var)
+    use_tavily_search = False
+    tavily_api_key = os.environ.get("TAVILY_API_KEY", "")
 ```
+
+> **Note:** When `use_tavily_search` is enabled, set the `TAVILY_API_KEY` environment variable with your Tavily API key. Tavily search takes priority over Google search when both are enabled.
 
 #### Custom Data
 

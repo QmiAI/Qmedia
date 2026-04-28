@@ -1,7 +1,9 @@
+import os
 from typing import List
 
 import yagooglesearch
 from pydantic import BaseModel
+from tavily import TavilyClient
 
 
 class OutreachSearchResult(BaseModel):
@@ -28,6 +30,28 @@ async def get_google_search(query: str, max_search: int = 5):
     search_response: List[OutreachSearchResult] = []
     for u in urls:
         search_response.append(OutreachSearchResult.model_validate(u))
+    return search_response
+
+
+async def get_tavily_search(query: str, max_search: int = 5):
+    api_key = os.environ.get("TAVILY_API_KEY", "")
+    client = TavilyClient(api_key=api_key)
+    response = client.search(
+        query=query,
+        max_results=max_search,
+        search_depth="basic",
+    )
+
+    search_response: List[OutreachSearchResult] = []
+    for rank, result in enumerate(response["results"], start=1):
+        search_response.append(
+            OutreachSearchResult(
+                rank=rank,
+                title=result.get("title", ""),
+                description=result.get("content", ""),
+                url=result.get("url", ""),
+            )
+        )
     return search_response
 
 

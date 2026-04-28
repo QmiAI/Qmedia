@@ -10,6 +10,7 @@ from services.search.google_search import (
     OutreachSearchResult,
     get_google_search,
     get_search_template,
+    get_tavily_search,
 )
 from utils.response import resp_error, resp_success
 
@@ -52,7 +53,11 @@ async def search_public(
 
     """
     try:
-        if Config.use_google_search:
+        if Config.use_tavily_search:
+            datas: List[OutreachSearchResult] = await get_tavily_search(
+                query, max_search
+            )
+        elif Config.use_google_search:
             datas: List[OutreachSearchResult] = await get_google_search(
                 query, max_search
             )
