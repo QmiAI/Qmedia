@@ -59,7 +59,6 @@ class Configer:
 
     # use tavily search (set to True and provide TAVILY_API_KEY env var)
     use_tavily_search = False
-    tavily_api_key = os.environ.get("TAVILY_API_KEY", "")
 
 
 Config = Configer()

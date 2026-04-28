@@ -85,7 +85,6 @@ class Configer:
 
     # use tavily search (set to True and provide TAVILY_API_KEY env var)
     use_tavily_search = False
-    tavily_api_key = os.environ.get("TAVILY_API_KEY", "")
 ```
 
 > **Note:** When `use_tavily_search` is enabled, set the `TAVILY_API_KEY` environment variable with your Tavily API key. Tavily search takes priority over Google search when both are enabled.

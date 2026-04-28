@@ -3,7 +3,6 @@ from typing import List
 
 import yagooglesearch
 from pydantic import BaseModel
-from tavily import TavilyClient
 
 
 class OutreachSearchResult(BaseModel):
@@ -34,9 +33,13 @@ async def get_google_search(query: str, max_search: int = 5):
 
 
 async def get_tavily_search(query: str, max_search: int = 5):
+    from tavily import AsyncTavilyClient
+
     api_key = os.environ.get("TAVILY_API_KEY", "")
-    client = TavilyClient(api_key=api_key)
-    response = client.search(
+    if not api_key:
+        raise ValueError("TAVILY_API_KEY environment variable is not set")
+    client = AsyncTavilyClient(api_key=api_key)
+    response = await client.search(
         query=query,
         max_results=max_search,
         search_depth="basic",
