@@ -1,3 +1,4 @@
+import os
 from typing import List
 
 import yagooglesearch
@@ -28,6 +29,32 @@ async def get_google_search(query: str, max_search: int = 5):
     search_response: List[OutreachSearchResult] = []
     for u in urls:
         search_response.append(OutreachSearchResult.model_validate(u))
+    return search_response
+
+
+async def get_tavily_search(query: str, max_search: int = 5):
+    from tavily import AsyncTavilyClient
+
+    api_key = os.environ.get("TAVILY_API_KEY", "")
+    if not api_key:
+        raise ValueError("TAVILY_API_KEY environment variable is not set")
+    client = AsyncTavilyClient(api_key=api_key)
+    response = await client.search(
+        query=query,
+        max_results=max_search,
+        search_depth="basic",
+    )
+
+    search_response: List[OutreachSearchResult] = []
+    for rank, result in enumerate(response["results"], start=1):
+        search_response.append(
+            OutreachSearchResult(
+                rank=rank,
+                title=result.get("title", ""),
+                description=result.get("content", ""),
+                url=result.get("url", ""),
+            )
+        )
     return search_response
 
 
