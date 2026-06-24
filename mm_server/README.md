@@ -131,6 +131,38 @@ curl http://localhost:11434/api/generate -d '{"model": "MODEL_NAME", "keep_alive
 
 <br/>
 
+#### (Optional) TwelveLabs Backend
+
+[TwelveLabs](https://twelvelabs.io) offers hosted video-native models. mm_server can
+optionally use them instead of running embedding/video models locally:
+
+- **Marengo** — multimodal embeddings (512-dim text/image/video vectors)
+- **Pegasus** — video understanding for captioning and analysis
+
+This backend is **opt-in and non-breaking**: the routes are registered only when the
+`TWELVELABS_API_KEY` environment variable is set. Without the key, mm_server behaves
+exactly as before.
+
+```bash
+# Install the SDK (already in requirements.txt)
+pip install "twelvelabs>=1.2.8"
+
+# Enable the backend (grab a free key at https://twelvelabs.io)
+export TWELVELABS_API_KEY=your_key_here
+python main.py
+```
+
+This adds two endpoints:
+
+- `POST /api/twelvelabs-text-embeddings` — body `{"prompt": "...", "model": "marengo"}`,
+  returns `{"embedding": [...512 floats...]}`.
+- `POST /api/twelvelabs-video-analyze` — body
+  `{"video_url": "https://.../video.mp4", "prompt": "Describe this video."}`,
+  returns `{"text": "..."}`. The URL must be publicly reachable (fetched server-side).
+
+Model names and the default `max_tokens` are configurable in `config.py`
+(`twelvelabs_embed_model`, `twelvelabs_analyze_model`, `twelvelabs_max_tokens`).
+
 #### API Documentation:
 
 http://localhost:50110/docs

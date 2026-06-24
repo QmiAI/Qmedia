@@ -1,3 +1,5 @@
+import os
+
 import uvicorn
 from api import cached_service, embed_service, image_service, video_service
 from config import Config
@@ -11,6 +13,14 @@ def include_routers():
     app.include_router(video_service.router, tags=["video process"])
     app.include_router(embed_service.router, tags=["embeddings"])
     app.include_router(cached_service.router, tags=["set model cached"])
+
+    # Optional TwelveLabs backend (Marengo embeddings + Pegasus video analysis).
+    # Registered only when TWELVELABS_API_KEY is set, so default behavior is unchanged.
+    if os.environ.get("TWELVELABS_API_KEY"):
+        from api import twelvelabs_service
+
+        app.include_router(twelvelabs_service.router, tags=["twelvelabs"])
+        print(" @ TwelveLabs backend enabled")
 
 
 def main():
