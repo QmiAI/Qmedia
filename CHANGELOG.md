@@ -1,3 +1,11 @@
+## Unreleased
+
+#### ✨ Features
+
+- Optional TwelveLabs backend for mm_server: Marengo multimodal embeddings and Pegasus video understanding (opt-in via `TWELVELABS_API_KEY`)
+
+<br />
+
 ## Version 0.1.0
 
 #### ✨ Features

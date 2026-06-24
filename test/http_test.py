@@ -113,6 +113,47 @@ def test_notes_query():
     print(response.json())
 
 
+def twelvelabs_text_embeddings():
+    # Marengo text embedding via the optional TwelveLabs backend.
+    # mm_server only registers this route when TWELVELABS_API_KEY is set.
+    model_name = "marengo"
+    base_url = "http://localhost:50110"
+    prompt = "a cat playing piano"
+
+    request_body = {"model": model_name, "prompt": prompt}
+
+    response = requests.post(
+        url=f"{base_url}/api/twelvelabs-text-embeddings",
+        headers={"Content-Type": "application/json"},
+        json=request_body,
+    )
+
+    print(response)
+    print(len(response.json()["embedding"]))  # expect 512
+
+
+def twelvelabs_video_analyze():
+    # Pegasus video understanding via the optional TwelveLabs backend.
+    # video_url must be a publicly reachable URL (fetched server-side).
+    model_name = "pegasus"
+    base_url = "http://localhost:50110"
+
+    request_body = {
+        "model": model_name,
+        "video_url": "https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_1MB.mp4",
+        "prompt": "Describe this video in one sentence.",
+    }
+
+    response = requests.post(
+        url=f"{base_url}/api/twelvelabs-video-analyze",
+        headers={"Content-Type": "application/json"},
+        json=request_body,
+    )
+
+    print(response)
+    print(response.json())
+
+
 def lifecycle_clip_image_embeddings(image_path: str):
     if image_path is None:
         image_path = "../docs/images/image-1.png"

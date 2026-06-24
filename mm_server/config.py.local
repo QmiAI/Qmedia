@@ -33,4 +33,14 @@ class Configer:
     # model keep alive time (s)
     video_keep_alive = 1  # 立即释放
 
+    # (optional) TwelveLabs backend — enabled only when TWELVELABS_API_KEY is set
+    # Marengo multimodal embedding model (512-dim text/image/video vectors)
+    twelvelabs_embed_model = "marengo3.0"
+    # Pegasus video understanding model
+    twelvelabs_analyze_model = "pegasus1.5"
+    # default max output tokens for Pegasus analysis (must be >= 512)
+    twelvelabs_max_tokens = 2048
+    # model keep alive time (s)
+    twelvelabs_keep_alive = 60
+
 Config = Configer()
